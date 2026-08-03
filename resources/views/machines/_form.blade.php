@@ -1,0 +1,11 @@
+<div class="row g-3">
+<div class="col-md-6"><label class="form-label">Dây chuyền *</label><select class="form-select" name="production_line_id" required>@foreach($productionLines as $item)<option value="{{ $item->id }}" @selected(old('production_line_id', $machine->production_line_id ?? '')==$item->id)>{{ $item->plant->code }} / {{ $item->code }} - {{ $item->name }}</option>@endforeach</select></div>
+<div class="col-md-2"><label class="form-label">Mã máy *</label><input class="form-control" name="code" required value="{{ old('code', $machine->code ?? '') }}"></div>
+<div class="col-md-4"><label class="form-label">Tên máy *</label><input class="form-control" name="name" required value="{{ old('name', $machine->name ?? '') }}"></div>
+<div class="col-md-4"><label class="form-label">Hãng sản xuất</label><input class="form-control" name="manufacturer" value="{{ old('manufacturer', $machine->manufacturer ?? '') }}"></div>
+<div class="col-md-4"><label class="form-label">Model</label><input class="form-control" name="model" value="{{ old('model', $machine->model ?? '') }}"></div>
+<div class="col-md-4"><label class="form-label">Serial</label><input class="form-control" name="serial_number" value="{{ old('serial_number', $machine->serial_number ?? '') }}"></div>
+<div class="col-md-4"><label class="form-label">Ngày lắp đặt</label><input class="form-control" type="date" name="installation_date" value="{{ old('installation_date', isset($machine) && $machine->installation_date ? $machine->installation_date->format('Y-m-d') : '') }}"></div>
+<div class="col-md-3"><label class="form-label">Trạng thái</label><select class="form-select" name="is_active"><option value="1" @selected(old('is_active', $machine->is_active ?? true)==1)>Hoạt động</option><option value="0" @selected(old('is_active', $machine->is_active ?? true)==0)>Ngừng</option></select></div>
+<div class="col-12"><label class="form-label">Mô tả</label><textarea class="form-control" name="description" rows="3">{{ old('description', $machine->description ?? '') }}</textarea></div>
+</div>

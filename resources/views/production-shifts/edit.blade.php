@@ -1,0 +1,1 @@
+@extends('layouts.app') @section('page_title','Sửa ca làm việc') @section('content')<div class="card panel-card"><div class="card-body"><form method="POST" action="{{route('production-shifts.update',$shift)}}">@method('PUT') @include('production-shifts._form')</form></div></div>@endsection

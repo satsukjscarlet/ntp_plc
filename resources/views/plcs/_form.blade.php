@@ -1,0 +1,14 @@
+<div class="row g-3">
+<div class="col-md-6"><label class="form-label">Máy *</label><select class="form-select" name="machine_id" required>@foreach($machines as $item)<option value="{{ $item->id }}" @selected(old('machine_id', $plc->machine_id ?? '')==$item->id)>{{ $item->productionLine->plant->code }} / {{ $item->code }} - {{ $item->name }}</option>@endforeach</select></div>
+<div class="col-md-6"><label class="form-label">Tên PLC *</label><input class="form-control" name="name" required value="{{ old('name', $plc->name ?? '') }}"></div>
+<div class="col-md-3"><label class="form-label">Hãng</label><input class="form-control" name="brand" value="{{ old('brand', $plc->brand ?? '') }}"></div>
+<div class="col-md-3"><label class="form-label">Model</label><input class="form-control" name="model" value="{{ old('model', $plc->model ?? '') }}"></div>
+<div class="col-md-3"><label class="form-label">IP *</label><input class="form-control" name="ip_address" required value="{{ old('ip_address', $plc->ip_address ?? '') }}"></div>
+<div class="col-md-3"><label class="form-label">Port *</label><input class="form-control" type="number" name="port" required value="{{ old('port', $plc->port ?? 80) }}"></div>
+<div class="col-md-3"><label class="form-label">Giao thức *</label><select class="form-select" name="protocol">@foreach(['HTTP_PORTAL','S7','MODBUS_TCP','OPC_UA'] as $value)<option value="{{ $value }}" @selected(old('protocol', $plc->protocol ?? 'HTTP_PORTAL')==$value)>{{ $value }}</option>@endforeach</select></div>
+<div class="col-md-3"><label class="form-label">Chu kỳ quét (giây) *</label><input class="form-control" type="number" min="1" name="scan_interval" required value="{{ old('scan_interval', $plc->scan_interval ?? 5) }}"></div>
+<div class="col-md-3"><label class="form-label">Múi giờ *</label><input class="form-control" name="timezone" required value="{{ old('timezone', $plc->timezone ?? 'Asia/Ho_Chi_Minh') }}"></div>
+<div class="col-md-3"><label class="form-label">Trạng thái</label><select class="form-select" name="is_active"><option value="1" @selected(old('is_active', $plc->is_active ?? true)==1)>Hoạt động</option><option value="0" @selected(old('is_active', $plc->is_active ?? true)==0)>Ngừng</option></select></div>
+<div class="col-12"><label class="form-label">URL thu thập</label><input class="form-control" name="collector_url" value="{{ old('collector_url', $plc->collector_url ?? '') }}"></div>
+<div class="col-12"><label class="form-label">Mô tả</label><textarea class="form-control" name="description" rows="3">{{ old('description', $plc->description ?? '') }}</textarea></div>
+</div>

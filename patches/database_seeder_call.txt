@@ -1,0 +1,7 @@
+Thêm DeviceSeeder::class vào DatabaseSeeder khi muốn tạo dữ liệu mẫu:
+
+$this->call([
+    RolePermissionSeeder::class,
+    AdminUserSeeder::class,
+    DeviceSeeder::class,
+]);

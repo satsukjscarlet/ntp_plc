@@ -1,0 +1,11 @@
+Mở bootstrap/app.php.
+
+Trong phần withMiddleware, thêm alias:
+
+$middleware->alias([
+    'active' => \App\Http\Middleware\EnsureUserIsActive::class,
+    'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+    'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+    'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+    'collector.auth' => \App\Http\Middleware\AuthenticatePlcCollector::class,
+]);

@@ -1,0 +1,22 @@
+Thêm vào mảng $fillable hiện có trong app/Models/PlcTag.php:
+
+'display_unit',
+'display_decimals',
+'warning_low',
+'warning_high',
+'alarm_enabled',
+'blink_on_alarm',
+'chart_enabled',
+'display_color',
+
+Thêm hoặc gộp vào $casts hiện có:
+
+protected $casts = [
+    // Giữ lại các cast hiện có...
+    'display_decimals' => 'integer',
+    'warning_low' => 'float',
+    'warning_high' => 'float',
+    'alarm_enabled' => 'boolean',
+    'blink_on_alarm' => 'boolean',
+    'chart_enabled' => 'boolean',
+];

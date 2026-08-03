@@ -1,0 +1,31 @@
+{
+  "source_file": "Tình hình sản xuất ngày chi tiết.xls",
+  "machine": "M62",
+  "date_from": "2026-07-01",
+  "date_to": "2026-07-31",
+  "source_product_codes": [
+    "P6310",
+    "P638",
+    "P7510",
+    "P758",
+    "P9012.5",
+    "P906",
+    "PE12512.5",
+    "PE6310",
+    "PE6312.5",
+    "PE7510",
+    "PE7512.5",
+    "PE7512.56",
+    "PE7516",
+    "PE75166",
+    "PE758",
+    "PE9010",
+    "PE9012.5",
+    "PE90162KH",
+    "PE9016KH",
+    "PE908"
+  ],
+  "source_rows": 63,
+  "expected_declarations": 82,
+  "expected_items": 96
+}

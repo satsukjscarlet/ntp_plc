@@ -1,0 +1,1 @@
+@extends('layouts.app') @section('title','Thêm định mức') @section('page_title','Thêm định mức máy - sản phẩm') @section('content')<div class="card panel-card"><div class="card-body"><form method="POST" action="{{ route('machine-product-standards.store') }}">@include('machine-product-standards._form')</form></div></div>@endsection

@@ -1,0 +1,3 @@
+Thêm vào cuối routes/web.php:
+
+require __DIR__.'/collector_admin.php';

@@ -1,0 +1,18 @@
+{
+  "tags": [
+    {
+      "address": "%MD1100",
+      "source_name": "Actual temperature neck",
+      "portal_name": "Actual temperature neck",
+      "data_type": "REAL",
+      "unit": "°C"
+    },
+    {
+      "address": null,
+      "source_name": "Extruder status",
+      "portal_name": "Extruder status",
+      "data_type": "BOOL",
+      "unit": null
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+curl -X POST "http://127.0.0.1:8000/api/collector/plc-data" ^
+  -H "Authorization: Bearer DAN_TOKEN_VAO_DAY" ^
+  -H "Accept: application/json" ^
+  -H "Content-Type: application/json" ^
+  --data-binary "@examples/plc_data_payload.json"

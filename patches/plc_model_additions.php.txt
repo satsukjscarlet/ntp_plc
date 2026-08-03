@@ -1,0 +1,29 @@
+Thêm các trường sau vào $fillable của App\Models\Plc:
+
+'collector_token_hash',
+'last_seen_at',
+'connection_status',
+'last_error',
+
+Thêm vào casts():
+
+'last_seen_at' => 'datetime',
+
+Có thể bổ sung quan hệ:
+
+public function currentValues()
+{
+    return $this->hasManyThrough(
+        \App\Models\PlcCurrentValue::class,
+        \App\Models\PlcTag::class,
+        'plc_id',
+        'plc_tag_id'
+    );
+}
+
+public function collectionLogs()
+{
+    return $this->hasMany(
+        \App\Models\PlcCollectionLog::class
+    );
+}

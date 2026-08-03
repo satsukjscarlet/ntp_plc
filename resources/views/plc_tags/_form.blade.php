@@ -1,0 +1,13 @@
+<div class="row g-3">
+<div class="col-md-6"><label class="form-label">PLC *</label><select class="form-select" name="plc_id" required>@foreach($plcs as $item)<option value="{{ $item->id }}" @selected(old('plc_id', $plcTag->plc_id ?? '')==$item->id)>{{ $item->machine->code }} - {{ $item->name }}</option>@endforeach</select></div>
+<div class="col-md-3"><label class="form-label">Address</label><input class="form-control" name="address" value="{{ old('address', $plcTag->address ?? '') }}"></div>
+<div class="col-md-3"><label class="form-label">Kiểu dữ liệu *</label><select class="form-select" name="data_type">@foreach(\App\Models\PlcTag::DATA_TYPES as $value)<option value="{{ $value }}" @selected(old('data_type', $plcTag->data_type ?? 'STRING')==$value)>{{ $value }}</option>@endforeach</select></div>
+<div class="col-md-6"><label class="form-label">Tên nguồn *</label><input class="form-control" name="source_name" required value="{{ old('source_name', $plcTag->source_name ?? '') }}"></div>
+<div class="col-md-6"><label class="form-label">Tên hiển thị</label><input class="form-control" name="display_name" value="{{ old('display_name', $plcTag->display_name ?? '') }}"></div>
+<div class="col-md-3"><label class="form-label">Đơn vị</label><input class="form-control" name="unit" value="{{ old('unit', $plcTag->unit ?? '') }}"></div>
+<div class="col-md-3"><label class="form-label">Nhóm hiển thị</label><input class="form-control" name="display_group" value="{{ old('display_group', $plcTag->display_group ?? '') }}"></div>
+<div class="col-md-2"><label class="form-label">Thứ tự</label><input class="form-control" type="number" min="0" name="display_order" value="{{ old('display_order', $plcTag->display_order ?? 0) }}"></div>
+<div class="col-md-4"><label class="form-label">Vai trò OEE</label><select class="form-select" name="oee_role"><option value="">Không gán</option>@foreach(\App\Models\PlcTag::OEE_ROLES as $value)<option value="{{ $value }}" @selected(old('oee_role', $plcTag->oee_role ?? '')==$value)>{{ $value }}</option>@endforeach</select></div>
+<div class="col-md-3"><label class="form-label">Hiển thị</label><select class="form-select" name="is_visible"><option value="1" @selected(old('is_visible', $plcTag->is_visible ?? true)==1)>Có</option><option value="0" @selected(old('is_visible', $plcTag->is_visible ?? true)==0)>Không</option></select></div>
+<div class="col-md-3"><label class="form-label">Trạng thái</label><select class="form-select" name="is_active"><option value="1" @selected(old('is_active', $plcTag->is_active ?? true)==1)>Hoạt động</option><option value="0" @selected(old('is_active', $plcTag->is_active ?? true)==0)>Ngừng</option></select></div>
+</div>

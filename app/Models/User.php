@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
+
+class User extends Authenticatable
+{
+    use HasFactory;
+    use Notifiable;
+    use HasRoles;
+
+    protected string $guard_name = 'web';
+
+    protected $fillable = [
+        'name',
+        'username',
+        'email',
+        'password',
+        'employee_code',
+        'department',
+        'position',
+        'is_active',
+        'portal_name',
+        'last_seen_at',
+        'sync_status',
+        'source_key',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+            'is_active' => 'boolean',
+        ];
+    }
+}

@@ -1,0 +1,7 @@
+<div class="row g-3">
+<div class="col-md-5"><label class="form-label">Nhà máy *</label><select class="form-select" name="plant_id" required>@foreach($plants as $item)<option value="{{ $item->id }}" @selected(old('plant_id', $productionLine->plant_id ?? '')==$item->id)>{{ $item->code }} - {{ $item->name }}</option>@endforeach</select></div>
+<div class="col-md-2"><label class="form-label">Mã *</label><input class="form-control" name="code" required value="{{ old('code', $productionLine->code ?? '') }}"></div>
+<div class="col-md-5"><label class="form-label">Tên dây chuyền *</label><input class="form-control" name="name" required value="{{ old('name', $productionLine->name ?? '') }}"></div>
+<div class="col-12"><label class="form-label">Mô tả</label><textarea class="form-control" name="description" rows="3">{{ old('description', $productionLine->description ?? '') }}</textarea></div>
+<div class="col-md-3"><label class="form-label">Trạng thái</label><select class="form-select" name="is_active"><option value="1" @selected(old('is_active', $productionLine->is_active ?? true)==1)>Hoạt động</option><option value="0" @selected(old('is_active', $productionLine->is_active ?? true)==0)>Ngừng</option></select></div>
+</div>
